@@ -3,6 +3,9 @@
 {
 	"compileOnSave": false,
 	"compilerOptions": {
+		"paths": {
+			"angular-bootstrap": ["./dist/angular-bootstrap"]
+		},
 		"outDir": "./dist/out-tsc",
 		"strict": true,
 		"noImplicitOverride": true,

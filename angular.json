@@ -2,5 +2,36 @@
 	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
 	"version": 1,
 	"newProjectRoot": "projects",
-	"projects": {}
+	"projects": {
+		"angular-bootstrap": {
+			"projectType": "library",
+			"root": "projects/angular-bootstrap",
+			"sourceRoot": "projects/angular-bootstrap/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/angular-bootstrap/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/angular-bootstrap/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/angular-bootstrap/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"tsConfig": "projects/angular-bootstrap/tsconfig.spec.json",
+						"polyfills": ["zone.js", "zone.js/testing"]
+					}
+				}
+			}
+		}
+	}
 }
