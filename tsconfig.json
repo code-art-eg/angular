@@ -4,7 +4,8 @@
 	"compileOnSave": false,
 	"compilerOptions": {
 		"paths": {
-			"angular-bootstrap": ["./dist/angular-bootstrap"]
+			"angular-bootstrap": ["./dist/angular-bootstrap"],
+			"angular-globalite": ["./dist/angular-globalite"]
 		},
 		"outDir": "./dist/out-tsc",
 		"strict": true,
