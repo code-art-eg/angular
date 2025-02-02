@@ -1,64 +1,27 @@
-# AngularGlobalite
+# angular-globalite
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.0.
+This library provides [Angular](https://angular.dev/) pipes for formatting and parsing numbers, dates, and booleans using the [@code-art-eg/globalite](https://github.com/code-art-eg/globalite) library.
+This is a rewrite of the [@code-art-eg/angular-globalize](https://github.com/code-art-eg/angular-globalize) library that used the [Globalize](https://github.com/globalizejs/globalize) library.
 
-## Code scaffolding
+## Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+You can install this library via npm:
 
 ```bash
-ng generate --help
+npm install @code-art-eg/angular-globalite
 ```
 
-## Building
-
-To build the library, run:
+or via yarn:
 
 ```bash
-ng build angular-globalite
+yarn add @code-art-eg/angular-globalite
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+## Versioning scheme
 
-### Publishing the Library
+The library major version follows the major version of Angular it is compatible with. For example, version 19.x.x is compatible with Angular 19.x.x.
+Since the first version was created for Angular 19, the lowest major version is 19.
 
-Once the project is built, you can publish your library by following these steps:
+## Documentation
 
-1. Navigate to the `dist` directory:
-
-    ```bash
-    cd dist/angular-globalite
-    ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-    ```bash
-    npm publish
-    ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+See documentation in [docs](https://code-art-eg.github.io/angular-globalite/) for more details.
