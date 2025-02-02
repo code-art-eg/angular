@@ -1,0 +1,6 @@
+.dropdown-item {
+	border-radius: 0.25rem;
+	&.active {
+		font-weight: 600;
+	}
+}

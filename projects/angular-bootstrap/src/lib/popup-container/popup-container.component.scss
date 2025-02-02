@@ -1,0 +1,41 @@
+.modal {
+	.modal-dialog-centered {
+		overflow-y: initial;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		&::before {
+			content: none;
+			height: 0;
+		}
+
+		.modal-content {
+			margin-top: auto;
+			margin-bottom: auto;
+
+			&.popup {
+				height: 100vh;
+
+				.modal-body {
+					overflow-y: auto;
+					flex: 1 1 auto;
+					position: relative;
+
+					> div {
+						position: absolute;
+						height: 100%;
+						margin: 0;
+						padding: 0;
+					}
+				}
+
+				.modal-header,
+				.modal-footer {
+					flex: 0 1 auto;
+					position: relative;
+				}
+			}
+		}
+	}
+}

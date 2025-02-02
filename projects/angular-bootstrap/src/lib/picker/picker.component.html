@@ -1,0 +1,37 @@
+<div class="dropdown">
+	<button
+		class="btn btn-link dropdown-toggle py-2 px-0 px-lg-2 align-items-center"
+		type="button"
+		data-toggle="dropdown"
+		aria-haspopup="true"
+		aria-expanded="false"
+		(click)="show = !show"
+	>
+		<i [class]="'bi-' + getActiveIcon()"></i>
+	</button>
+	<ul
+		class="dropdown-menu p-1"
+		[class.show]="show"
+		aria-labelledby="dropdownMenuButton"
+	>
+		@for (button of buttons; track button.id) {
+			<li>
+				<button
+					class="btn btn-link dropdown-item d-flex align-items-center"
+					type="button"
+					data-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+					(click)="value = button.value"
+					[class.active]="button.active"
+				>
+					<i [class]="'me-2 opacity-50 bi-' + button.icon"></i>
+					{{ button.label }}
+					@if (button.active) {
+						<i class="bi-check ms-auto"></i>
+					}
+				</button>
+			</li>
+		}
+	</ul>
+</div>
