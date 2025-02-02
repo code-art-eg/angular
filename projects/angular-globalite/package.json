@@ -3,6 +3,9 @@
 	"version": "19.1.0",
 	"author": "Sherif El-Metainy (Code Art)",
 	"license": "MIT",
+	"exports": [
+		"./src/public-api.ts"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/code-art-eg/angular-globalite.git"

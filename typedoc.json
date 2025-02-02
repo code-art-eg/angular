@@ -1,0 +1,10 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+	"entryPoints": [
+		"./projects/angular-bootstrap",
+		"./projects/angular-globalite"
+	],
+	"tsconfig": "./tsconfig.typedoc.json",
+	"out": "./docs",
+	"entryPointStrategy": "packages"
+}

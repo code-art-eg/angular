@@ -24,6 +24,7 @@ export type { Button } from './lib/picker/picker.component';
 export type { PickerOption } from './lib/types';
 
 export type {
+	ComponentType,
 	PopupType,
 	PopupComponentType,
 	PopupOptions,
