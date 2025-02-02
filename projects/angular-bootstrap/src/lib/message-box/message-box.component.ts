@@ -1,9 +1,8 @@
-import { Component, inject, TemplateRef, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import type { DialogButton, IPopupComponent, MessageBoxData } from '../types';
 import { Subject } from 'rxjs';
 import { DEFAULT_BUTTONS } from '../constants';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
-import { PopupService } from '../popup.service';
 
 @Component({
 	selector: 'bs-message-box',

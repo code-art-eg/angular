@@ -2,8 +2,12 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"paths": {
-			"@code-art-eg/angular-globalite": ["./projects/angular-globalite/src/public-api.ts"],
-			"@code-art-eg/angular-bootstrap": ["./projects/angular-bootstrap/src/public-api.ts"]
+			"@code-art-eg/angular-globalite": [
+				"./projects/angular-globalite/src/public-api.ts"
+			],
+			"@code-art-eg/angular-bootstrap": [
+				"./projects/angular-bootstrap/src/public-api.ts"
+			]
 		}
 	}
 }

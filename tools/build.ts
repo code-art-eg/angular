@@ -1,8 +1,7 @@
-import {exec} from 'node:child_process';
+import { exec } from 'node:child_process';
 import path from 'node:path';
 import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
-
 
 const libs = ['angular-bootstrap', 'angular-globalite'];
 
@@ -39,19 +38,28 @@ if (match[2]) {
 for (const lib of libs) {
 	console.log(`Building ${lib}...`);
 	await new Promise<void>((resolve, reject) => {
-		exec(`ng build ${lib} --configuration production`, {}, (error, stdout, stderr) => {
-			console.error(stderr);
-			console.log(stdout);
-			if (error) {
-				reject(error);
-				process.exit(1)
-			} else {
-				resolve();
+		exec(
+			`ng build ${lib} --configuration production`,
+			{},
+			(error, stdout, stderr) => {
+				console.error(stderr);
+				console.log(stdout);
+				if (error) {
+					reject(error);
+					process.exit(1);
+				} else {
+					resolve();
+				}
 			}
-		});
+		);
 	});
 
-	const packageJsonPath = path.join(rootDir, `dist`, `${lib}`, `package.json`);
+	const packageJsonPath = path.join(
+		rootDir,
+		`dist`,
+		`${lib}`,
+		`package.json`
+	);
 
 	console.log('packageJsonPath:', packageJsonPath);
 	// Read the package.json file
@@ -70,18 +78,22 @@ for (const lib of libs) {
 
 	console.log(`Publishing ${lib}...`);
 	await new Promise<void>((resolve, reject) => {
-		exec(`npm publish --provenance --access public`, {
-			cwd: path.join(rootDir, `dist`, `${lib}`)
-		}, (error, stdout, stderr) => {
-			console.error(stderr);
-			console.log(stdout);
-			if (error) {
-				reject(error);
-				process.exit(1)
-			} else {
-				resolve();
+		exec(
+			`npm publish --provenance --access public`,
+			{
+				cwd: path.join(rootDir, `dist`, `${lib}`),
+			},
+			(error, stdout, stderr) => {
+				console.error(stderr);
+				console.log(stdout);
+				if (error) {
+					reject(error);
+					process.exit(1);
+				} else {
+					resolve();
+				}
 			}
-		});
+		);
 	});
 
 	console.log(`Published ${lib}`);

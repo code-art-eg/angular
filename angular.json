@@ -30,6 +30,16 @@
 						"tsConfig": "projects/angular-bootstrap/tsconfig.spec.json",
 						"polyfills": ["zone.js", "zone.js/testing"]
 					}
+				},
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
+					"options": {
+						"lintFilePatterns": [
+							"projects/angular-bootstrap/**/*.ts",
+							"projects/angular-bootstrap/**/*.html"
+						],
+						"eslintConfig": "projects/angular-bootstrap/eslint.config.mjs"
+					}
 				}
 			}
 		},
@@ -59,6 +69,16 @@
 					"options": {
 						"tsConfig": "projects/angular-globalite/tsconfig.spec.json",
 						"polyfills": ["zone.js", "zone.js/testing"]
+					}
+				},
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
+					"options": {
+						"lintFilePatterns": [
+							"projects/angular-globalite/**/*.ts",
+							"projects/angular-globalite/**/*.html"
+						],
+						"eslintConfig": "projects/angular-globalite/eslint.config.mjs"
 					}
 				}
 			}
@@ -145,6 +165,16 @@
 						],
 						"styles": ["projects/test-app/src/styles.scss"],
 						"scripts": []
+					}
+				},
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
+					"options": {
+						"lintFilePatterns": [
+							"projects/test-app/**/*.ts",
+							"projects/test-app/**/*.html"
+						],
+						"eslintConfig": "projects/test-app/eslint.config.mjs"
 					}
 				}
 			}

@@ -1,5 +1,5 @@
 import { MessageCollection } from './types';
-import {FORM_VALIDATION_CONTEXT} from './constants';
+import { FORM_VALIDATION_CONTEXT } from './constants';
 
 /**
  * Default validation messages for the form validation context.
