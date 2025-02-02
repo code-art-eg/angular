@@ -1,0 +1,30 @@
+<ul>
+	<li>
+		<code>123456.7654 | gnumber</code>:
+		{{ 123456.7654 | gnumber }}
+	</li>
+	<li>
+		<code>123456.7654 | gnumber:'e'</code>:
+		{{ 123456.7654 | gnumber: 'e' }}
+	</li>
+	<li>
+		<code>123456.7654 | gnumber:'f':'fr'</code>:
+		{{ 123456.7654 | gnumber: 'f' : 'fr' }}
+	</li>
+
+	<li>
+		<code
+			>123456.7654 | gnumber: {{ '{' }} style: 'percent',
+			minimumFractionDigits: 4 {{ '}' }}:'fr'</code
+		>:
+		{{
+			123456.7654
+				| gnumber: { style: 'percent', minimumFractionDigits: 4 } : 'fr'
+		}}
+	</li>
+
+	<li>
+		<code>number$ | gnumber:'d4'</code>:
+		{{ number$ | gnumber: 'd4' }}
+	</li>
+</ul>

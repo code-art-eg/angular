@@ -1,0 +1,60 @@
+<form [formGroup]="form" class="container mt-4">
+	<div class="form-group">
+		<label for="dateOnlyValue">Date Only</label>
+		<input
+			id="dateOnlyValue"
+			type="text"
+			glbToDateOnly
+			class="form-control"
+			formControlName="dateOnlyValue"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="dateValue">Date</label>
+		<input
+			id="dateValue"
+			type="text"
+			glbToDateTime="G"
+			class="form-control"
+			formControlName="dateValue"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="numericValue">Numeric</label>
+		<input
+			id="numericValue"
+			type="text"
+			glbToNumber
+			class="form-control"
+			formControlName="numericValue"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="textValue">Text</label>
+		<input
+			id="textValue"
+			type="text"
+			glbToNull
+			class="form-control"
+			formControlName="textValue"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="integerValue">Integer</label>
+		<input
+			id="integerValue"
+			type="text"
+			glbToInteger
+			class="form-control"
+			formControlName="integerValue"
+		/>
+	</div>
+
+	<button type="submit" class="my-3 btn btn-primary">Submit</button>
+</form>
+
+<h3>Json Value</h3>
+
+<pre
+	>{{ form.value | json }}
+</pre>

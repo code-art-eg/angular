@@ -1,0 +1,39 @@
+<ul>
+	<li>
+		<code>date = new Date(2008, 5, 23); // 23 June 2008</code>
+	</li>
+	<li>
+		<code>date | gdate</code>:
+		{{ date | gdate }}
+	</li>
+
+	<li>
+		<code>date | gdate:'f'</code>:
+		{{ date | gdate: 'f' }}
+	</li>
+
+	<li>
+		<code>date | gdate:'f':'en'</code>:
+		{{ date | gdate: 'f' : 'en' }}
+	</li>
+
+	<li>
+		<code>date | gdate:'d':'ar-EG'</code>:
+		{{ date | gdate: 'd' : 'ar-EG' }}
+	</li>
+
+	<li>
+		<code>now$ | gdate:'T'</code>:
+		{{ now$ | gdate: 'T' }}
+	</li>
+
+	<li>
+		<code>now$ | gdate:'T':'ar-EG'</code>:
+		{{ now$ | gdate: 'T' : 'ar-EG' }}
+	</li>
+
+	<li>
+		<code>dateOnly | gdate'</code>:
+		{{ dateOnly | gdate }}
+	</li>
+</ul>

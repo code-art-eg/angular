@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg mx-5 px-sm-2">
+	<a class="navbar-brand" routerLink="home">Angular Globalite</a>
+	<button
+		(click)="toggled = !toggled"
+		class="navbar-toggler"
+		type="button"
+		data-toggle="collapse"
+		data-target="#navbarNav"
+		aria-controls="navbarNav"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+	>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="navbar-collapse ms-auto" [class.collapse]="!toggled">
+		<ul class="navbar-nav">
+			@for (route of routes; track route.path) {
+				<li class="nav-item px-sm-2">
+					<a
+						class="nav-link"
+						[routerLink]="route.path"
+						routerLinkActive="active"
+						>{{ route.label }}</a
+					>
+				</li>
+			}
+		</ul>
+		<span class="nav-separator ms-auto"></span>
+
+		<ul class="navbar-nav me-5">
+			<li class="nav-item">
+				<app-language-picker />
+			</li>
+			<li class="nav-item me-5">
+				<bs-theme-picker />
+			</li>
+		</ul>
+	</div>
+</nav>
