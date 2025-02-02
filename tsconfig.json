@@ -5,6 +5,7 @@
 	"compilerOptions": {
 		"paths": {
 			"angular-bootstrap": ["./dist/angular-bootstrap"],
+			"angular-forms": ["./dist/angular-forms"],
 			"angular-globalite": ["./dist/angular-globalite"]
 		},
 		"outDir": "./dist/out-tsc",
