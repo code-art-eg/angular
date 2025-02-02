@@ -1,0 +1,9 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"paths": {
+			"@code-art-eg/angular-globalite": ["../angular-globalite/src/public-api.ts"],
+			"@code-art-eg/angular-bootstrap": ["../angular-bootstrap/src/public-api.ts"]
+		}
+	}
+}

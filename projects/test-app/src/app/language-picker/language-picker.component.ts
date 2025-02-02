@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { PickerComponent, PickerOption } from '@code-art-eg/angular-bootstrap';
-import { LocaleValidatorService } from '../../../../angular-globalite/src/lib/services/locale-validator.service';
+import { LocaleValidatorService } from '@code-art-eg/angular-globalite';
 import { LocaleService } from '@code-art-eg/angular-globalite';
 import { getLanguageName } from '@code-art-eg/globalite';
 

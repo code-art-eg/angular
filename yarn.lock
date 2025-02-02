@@ -1070,6 +1070,11 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
+"@code-art-eg/globalite@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@code-art-eg/globalite/-/globalite-0.6.0.tgz#e93c53ac56db0a55366aaaab087d77190bc548ad"
+  integrity sha512-q7g5UqpE/HBYCUWekDRcp1GyICi4Y9PtJ4v5KG87rPyfHoWBzLW6kwkoFcIMRHQIDgnJkLYUXIIdEpJGR9urjQ==
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
