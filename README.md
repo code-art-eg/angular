@@ -1,59 +1,41 @@
-# Angular
+# CodeArt's Angular Libraries
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+This repository contains a collection of [Angular](https://angular.dev) libraries developed by [CodeArt Egypt](https://github.com/code-art-eg).
 
-## Development server
+## Libraries
 
-To start a local development server, run:
+### [@code-art-eg/angular-bootstrap](./projects/angular-bootstrap/README.md)
 
-```bash
-ng serve
-```
+This library provides Angular components and directives that are compatible with Bootstrap 5.
+It also includes a service for managing the application's theme (Dark vs Light).
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This source for this library was moved from old [angular-bootstrap](https://github.com/code-art-eg/angular-bootstrap) repository
+to this repository in order to manage all my Angular libraries in one place.
 
-## Code scaffolding
+### [@code-art-eg/angular-globalite](./projects/angular-globalite/README.md)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+This library provides Angular pipes and directives for formatting and parsing numbers, dates,
+and currencies using the [globalite](https://github.com/code-art-eg/globalite) library.
 
-```bash
-ng generate component component-name
-```
+This source for this library was moved from old [angular-globalite](https://github.com/code-art-eg/angular-globalite) repository
+to this repository in order to manage all my Angular libraries in one place.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Versioning
 
-```bash
-ng generate --help
-```
+I use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this repository.
+Tags are named as `vX.Y.Z` where `X.Y.Z` is the version number.
+Note that for older versions of the libraries where the code was in a different repository,
+there is no tag for the version in this repository.
 
-## Building
+All Libraries use the same version number.
 
-To build the project run:
+The major version number is the same as the supported Angular version. So, for Angular 19.x the major version is 19.
+Since Angular 19 is the first supported version, the first version is 19.
 
-```bash
-ng build
-```
+## License
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The libraries in this repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Running unit tests
+## Acknowledgments
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- The authors of [Globalize](https://github.com/globalizejs/globalize) for inspiration for the globalite library on which the angular-globalite library is based.
