@@ -1,26 +1,17 @@
 {
-	"name": "@code-art-eg/angular-bootstrap",
-	"version": "0.0.0",
-	"author": "Sherif El-Metainy (Code Art)",
-	"license": "MIT",
+	"name": "angular-bootstrap",
 	"exports": [
 		"./src/public-api.ts"
 	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/code-art-eg/angular.git"
-	},
 	"peerDependencies": {
-		"@angular/common": "^19.0.0",
-		"@angular/core": "^19.0.0",
-		"bootstrap": "^5.3.3",
-		"bootstrap-icons": "^1.11.3"
+		"@angular/common": "0.0.0",
+		"@angular/core": "0.0.0",
+		"bootstrap": "0.0.0",
+		"bootstrap-icons": "0.0.0"
 	},
 	"dependencies": {
 		"tslib": "^2.3.0"
 	},
-	"sideEffects": false,
-	"private": false,
 	"keywords": [
 		"angular",
 		"bootstrap",

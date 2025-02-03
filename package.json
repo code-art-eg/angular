@@ -1,6 +1,13 @@
 {
 	"name": "angular",
 	"version": "0.0.0",
+	"author": "Sherif El-Metainy (Code Art)",
+	"license": "MIT",
+	"homepage": "https://github.com/code-art-eg/angular",
+	"bugs": {
+		"email": "sherif-elmetainy@code-art.net",
+		"url": "https://github.com/code-art-eg/angular/issues"
+	},
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
@@ -9,6 +16,10 @@
 		"test": "ng test",
 		"format": "prettier --write \"./**/*.{js,mjs,cjs,jsx,cts,mts,ts,tsx,json,css,sass,less,scss,md,htm,html}\"",
 		"lint": "ng lint"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/code-art-eg/angular.git"
 	},
 	"type": "module",
 	"private": true,

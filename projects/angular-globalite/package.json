@@ -1,25 +1,16 @@
 {
-	"name": "@code-art-eg/angular-globalite",
-	"version": "0.0.0",
-	"author": "Sherif El-Metainy (Code Art)",
-	"license": "MIT",
+	"name": "angular-globalite",
 	"exports": [
 		"./src/public-api.ts"
 	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/code-art-eg/angular.git"
-	},
 	"peerDependencies": {
-		"@angular/common": "^19.0.0",
-		"@angular/core": "^19.0.0",
-		"@code-art-eg/globalite": "^0.6.0"
+		"@angular/common": "0.0.0",
+		"@angular/core": "0.0.0",
+		"@code-art-eg/globalite": "0.0.0"
 	},
 	"dependencies": {
 		"tslib": "^2.3.0"
 	},
-	"sideEffects": false,
-	"private": false,
 	"keywords": [
 		"angular",
 		"globalite",
