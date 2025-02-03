@@ -1,6 +1,6 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { isEmptyValue } from '../util/is-empty-value';
-import { isDateOnly } from '../util/is-date-only';
+import { isDateOnly } from '@code-art-eg/angular-globalite';
 
 /**
  * Validator that requires the control value to be a valid date (without time).

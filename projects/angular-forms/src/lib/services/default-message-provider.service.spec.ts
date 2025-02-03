@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { DefaultMessageProviderService } from './default-message-provider.service';
-import { MessageCollection, MessageProvider } from '../types';
+import type { MessageCollection, MessageProvider } from '../types';
 import { MESSAGES_INJECTION_TOKEN } from '../messages-token';
 import { first } from 'rxjs';
 import { FORM_VALIDATION_CONTEXT, NO_CONTEXT } from '../constants';

@@ -1,4 +1,4 @@
-import { DateOnly } from '../types';
+import type { DateOnly } from '@code-art-eg/angular-globalite';
 import { getAge } from './get-age';
 
 describe('getAge Utility Function', () => {

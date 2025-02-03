@@ -2,7 +2,8 @@
 	"$schema": "https://typedoc.org/schema.json",
 	"entryPoints": [
 		"./projects/angular-bootstrap",
-		"./projects/angular-globalite"
+		"./projects/angular-globalite",
+		"./projects/angular-forms"
 	],
 	"tsconfig": "./tsconfig.typedoc.json",
 	"out": "./docs",

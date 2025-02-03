@@ -1,4 +1,4 @@
-import { MessageCollection } from './types';
+import type { MessageCollection } from './types';
 import { FORM_VALIDATION_CONTEXT } from './constants';
 
 /**

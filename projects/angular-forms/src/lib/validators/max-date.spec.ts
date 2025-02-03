@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 import { maxDate } from './max-date';
-import { DateOnly } from '../types';
+import type { DateOnly } from '@code-art-eg/angular-globalite';
 
 describe('maxDate Validator', () => {
 	const maxDateValue = new Date(2023, 9, 10);

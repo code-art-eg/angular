@@ -10,7 +10,7 @@
 			],
 			"@code-art-eg/angular-forms": [
 				"./projects/angular-forms/src/public-api.ts"
-			],
+			]
 		}
 	}
 }

@@ -1,4 +1,4 @@
-import { DateOnly } from '../types';
+import type { DateOnly } from '@code-art-eg/angular-globalite';
 
 export function compareDates(d1: Date | DateOnly, d2: Date | DateOnly): number {
 	const date1 =

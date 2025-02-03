@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 import { ageRange } from './age-range';
-import { DateOnly } from '../types';
+import type { DateOnly } from '@code-art-eg/angular-globalite';
 
 describe('ageRange Validator', () => {
 	const minAge = 18;

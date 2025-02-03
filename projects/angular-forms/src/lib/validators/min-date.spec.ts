@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 import { minDate } from './min-date';
-import { DateOnly } from '../types';
+import type { DateOnly } from '@code-art-eg/angular-globalite';
 
 describe('minDate Validator', () => {
 	const minDateValue = new Date(2023, 9, 10);

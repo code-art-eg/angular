@@ -1,7 +1,7 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { isEmptyValue } from './is-empty-value';
 import { getSibling } from './get-sibling';
-import { isDateOnly } from './is-date-only';
+import { isDateOnly } from '@code-art-eg/angular-globalite';
 import { compareDates } from './compare-dates';
 import { FORM_FIELD_CONTEXT } from '../constants';
 

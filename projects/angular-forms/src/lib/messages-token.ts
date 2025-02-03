@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import { MessageCollection } from './types';
+import type { MessageCollection } from './types';
 import { DEFAULT_VALIDATION_MESSAGES } from './validation-messages-en';
 
 /**

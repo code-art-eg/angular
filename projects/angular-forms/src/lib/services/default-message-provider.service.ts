@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { MessageProvider, MessageResult } from '../types';
+import type { MessageProvider, MessageResult } from '../types';
 import { MESSAGES_INJECTION_TOKEN } from '../messages-token';
 import { from, Observable } from 'rxjs';
 

@@ -1,5 +1,5 @@
-import { DateOnly } from '../types';
 import { compareDates } from './compare-dates';
+import type { DateOnly } from '@code-art-eg/angular-globalite';
 
 describe('compareDates', () => {
 	it('should return 0 for equal Date and DateOnly objects', () => {

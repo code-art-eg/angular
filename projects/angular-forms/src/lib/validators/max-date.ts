@@ -1,7 +1,7 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
-import { isDateOnly } from '../util/is-date-only';
+import { isDateOnly } from '@code-art-eg/angular-globalite';
 import { compareDates } from '../util/compare-dates';
-import { DateOnly } from '../types';
+import type { DateOnly } from '@code-art-eg/angular-globalite';
 
 /**
  * Returns a validator function that checks if the control value is a date before the specified maximum date.

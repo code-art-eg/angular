@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 import { pastDate } from './past-date';
-import { DateOnly } from '../types';
+import type { DateOnly } from '@code-art-eg/angular-globalite';
 
 describe('pastDate Validator', () => {
 	it('should return null if the control value is null', () => {
