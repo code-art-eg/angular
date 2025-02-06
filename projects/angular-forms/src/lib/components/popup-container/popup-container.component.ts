@@ -12,7 +12,7 @@ import {
 	ViewContainerRef,
 } from '@angular/core';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
-import { IPopupComponent, PopupOptions } from '../types';
+
 import {
 	firstValueFrom,
 	from,
@@ -23,13 +23,14 @@ import {
 	Subscription,
 } from 'rxjs';
 import { DefaultExport } from '@angular/router';
-import { isPromise } from '../util/is-promise';
-import { observableFromPromise } from '../util/observable-from-promise';
-import { isDefaultExport } from '../util/is-default-export';
+import { isPromise } from '../../util/is-promise';
+import { observableFromPromise } from '../../util/observable-from-promise';
+import { isDefaultExport } from '../../util/is-default-export';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import type { IPopupComponent, PopupOptions } from '../../types';
 
 @Component({
-	selector: 'bs-container',
+	selector: 'frm-container',
 	imports: [NgTemplateOutlet, NgIf],
 	templateUrl: './popup-container.component.html',
 	styleUrl: './popup-container.component.scss',

@@ -1,6 +1,6 @@
 import { inject, InjectionToken } from '@angular/core';
 import { LocalStorageThemeProviderService } from './local-storage-theme-provider.service';
-import type { DialogButton, Theme, ThemeProvider } from './types';
+import type { Theme, ThemeProvider } from './types';
 
 const CONFIG_PREFIX = 'angular-bootstrap';
 
@@ -40,13 +40,3 @@ export const THEME_PROVIDER_TOKEN = new InjectionToken<ThemeProvider>(
 		factory: () => inject(LocalStorageThemeProviderService),
 	}
 );
-
-const CLOSE_ACTION = 'close';
-export const CLOSE_BUTTON = {
-	id: CLOSE_ACTION,
-	text: 'Close',
-	buttonType: 'secondary',
-	close: true,
-} satisfies DialogButton;
-
-export const DEFAULT_BUTTONS = [CLOSE_BUTTON];

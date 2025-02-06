@@ -1,11 +1,16 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
-import type { DialogButton, IPopupComponent, MessageBoxData } from '../types';
+
 import { Subject } from 'rxjs';
-import { DEFAULT_BUTTONS } from '../constants';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
+import type {
+	DialogButton,
+	IPopupComponent,
+	MessageBoxData,
+} from '../../types';
+import { DEFAULT_BUTTONS } from '../../constants';
 
 @Component({
-	selector: 'bs-message-box',
+	selector: 'frm-message-box',
 	imports: [NgForOf, NgClass, NgIf],
 	templateUrl: './message-box.component.html',
 	styleUrl: './message-box.component.css',

@@ -4,11 +4,11 @@ import {
 	inject,
 	Injectable,
 } from '@angular/core';
-import { PopupContainerComponent } from './popup-container/popup-container.component';
 import { DOCUMENT } from '@angular/common';
-import { MessageBoxData } from './types';
-import { MessageBoxComponent } from './message-box/message-box.component';
 import { lastValueFrom } from 'rxjs';
+import { PopupContainerComponent } from '../components/popup-container/popup-container.component';
+import { MessageBoxData } from '../types';
+import { MessageBoxComponent } from '../components/message-box/message-box.component';
 
 @Injectable({
 	providedIn: 'root',
