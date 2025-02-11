@@ -10,6 +10,7 @@ import { DurationPipeExampleComponent } from './duration-pipe-example/duration-p
 import { BooleanPipeExampleComponent } from './boolean-pipe-example/boolean-pipe-example.component';
 import { FormDirectivesExampleComponent } from './form-directives-example/form-directives-example.component';
 import { DirectionExampleComponent } from './direction-example/direction-example.component';
+import { PopupExampleComponent } from './popup-example/popup-example.component';
 
 export const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -63,5 +64,10 @@ export const routes: Routes = [
 		path: 'direction',
 		component: DirectionExampleComponent,
 		title: 'direction',
+	},
+	{
+		path: 'popup',
+		component: PopupExampleComponent,
+		title: 'popup',
 	},
 ];
