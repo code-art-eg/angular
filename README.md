@@ -12,7 +12,7 @@ It also includes a service for managing the application's theme (Dark vs Light).
 This source for this library was moved from old [angular-bootstrap](https://github.com/code-art-eg/angular-bootstrap) repository
 to this repository in order to manage all my Angular libraries in one place.
 
-### [@code-art-eg/angular-globalite](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-forms.html)
+### [@code-art-eg/angular-globalite](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-globalite.html)
 
 This library provides Angular pipes and directives for formatting and parsing numbers, dates,
 and currencies using the [globalite](https://github.com/code-art-eg/globalite) library.
@@ -20,7 +20,7 @@ and currencies using the [globalite](https://github.com/code-art-eg/globalite) l
 This source for this library was moved from old [angular-globalite](https://github.com/code-art-eg/angular-globalite) repository
 to this repository in order to manage all my Angular libraries in one place.
 
-### [@code-art-eg/angular-globalite](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-forms.html)
+### [@code-art-eg/angular-forms](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-forms.html)
 
 This library provides Angular directives, components and services for working with forms.
 
