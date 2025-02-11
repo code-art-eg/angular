@@ -1,5 +1,5 @@
 {
-	"name": "angular-forms",
+	"name": "@code-art-eg/angular-forms",
 	"exports": [
 		"./src/public-api.ts"
 	],

@@ -1,5 +1,5 @@
 {
-	"name": "angular-bootstrap",
+	"name": "@code-art-eg/angular-bootstrap",
 	"exports": [
 		"./src/public-api.ts"
 	],

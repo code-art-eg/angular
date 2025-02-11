@@ -4,7 +4,7 @@ This repository contains a collection of [Angular](https://angular.dev) librarie
 
 ## Libraries
 
-### [@code-art-eg/angular-bootstrap](./projects/angular-bootstrap/README.md)
+### [@code-art-eg/angular-bootstrap](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-bootstrap.html)
 
 This library provides Angular components and directives that are compatible with Bootstrap 5.
 It also includes a service for managing the application's theme (Dark vs Light).
@@ -12,13 +12,17 @@ It also includes a service for managing the application's theme (Dark vs Light).
 This source for this library was moved from old [angular-bootstrap](https://github.com/code-art-eg/angular-bootstrap) repository
 to this repository in order to manage all my Angular libraries in one place.
 
-### [@code-art-eg/angular-globalite](./projects/angular-globalite/README.md)
+### [@code-art-eg/angular-globalite](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-forms.html)
 
 This library provides Angular pipes and directives for formatting and parsing numbers, dates,
 and currencies using the [globalite](https://github.com/code-art-eg/globalite) library.
 
 This source for this library was moved from old [angular-globalite](https://github.com/code-art-eg/angular-globalite) repository
 to this repository in order to manage all my Angular libraries in one place.
+
+### [@code-art-eg/angular-globalite](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-forms.html)
+
+This library provides Angular directives, components and services for working with forms.
 
 ## Versioning
 

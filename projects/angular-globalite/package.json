@@ -1,5 +1,5 @@
 {
-	"name": "angular-globalite",
+	"name": "@code-art-eg/angular-globalite",
 	"exports": [
 		"./src/public-api.ts"
 	],

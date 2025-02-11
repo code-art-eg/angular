@@ -24,4 +24,4 @@ Since the first version was created for Angular 19, the lowest major version is 
 
 ## Documentation
 
-See documentation in [docs](https://code-art-eg.github.io/angular-globalite/) for more details.
+See documentation in [docs](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-globalite.html) for more details.

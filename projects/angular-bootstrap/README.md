@@ -22,7 +22,7 @@ The library major version follows the major version of Angular it is compatible 
 
 ## Documentation
 
-See documentation in [docs](https://code-art-eg.github.io/angular-bootstrap/) for more details.
+See documentation in [docs](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-bootstrap.html) for more details.
 
 ## Services
 
