@@ -1,3 +1,5 @@
+import { getLocaleParts } from './get-locale-parts';
+
 /**
  * Gets the parent locale of the given locale string.
  * The implementation assumes that the locale is normalized.
@@ -5,10 +7,11 @@
  * @returns {string} - The parent locale string.
  */
 export function getParentLocale(locale: string): string {
-	const split = locale.split('-');
-	if (split.length === 1) {
+	const parts = getLocaleParts(locale);
+
+	if (!parts.region) {
 		return '';
 	}
 
-	return split[0].toLowerCase();
+	return parts.language;
 }

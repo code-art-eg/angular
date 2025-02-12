@@ -15,7 +15,6 @@ export class DefaultMessageProviderService implements MessageProvider {
 	readonly #messages = new Map<string, Observable<MessageResult>>();
 	readonly supportsEditing = false;
 	#injectedMessages = inject(MESSAGES_INJECTION_TOKEN);
-	readonly #nullMessage: Observable<MessageResult | null> = from([null]);
 
 	constructor() {
 		this.#injectedMessages.forEach(collection => {
@@ -30,8 +29,6 @@ export class DefaultMessageProviderService implements MessageProvider {
 					context: collection.context,
 					language: collection.language,
 					message: collection.messages[key],
-					editable: false,
-					provider: this,
 				};
 				this.#messages.set(cacheKey, from([mstResult]));
 			});
@@ -42,9 +39,9 @@ export class DefaultMessageProviderService implements MessageProvider {
 		language: string,
 		context: string,
 		key: string
-	): Observable<MessageResult | null> {
+	): Observable<MessageResult> | null {
 		const cacheKey = `${language}/${context}/${key}`;
-		return this.#messages.get(cacheKey) ?? this.#nullMessage;
+		return this.#messages.get(cacheKey) ?? null;
 	}
 
 	setMessage(): Observable<MessageResult> {

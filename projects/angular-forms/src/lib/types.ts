@@ -47,16 +47,6 @@ export interface MessageResult {
 	 * The message context.
 	 */
 	readonly context: string;
-
-	/**
-	 * Whether the message can be edited.
-	 */
-	readonly editable: boolean;
-
-	/**
-	 * The message provider. providing this message
-	 */
-	readonly provider: MessageProvider;
 }
 
 /**
@@ -74,7 +64,7 @@ export interface MessageProvider {
 		language: string,
 		context: string,
 		key: string
-	): Observable<MessageResult | null>;
+	): Observable<MessageResult> | null;
 
 	/**
 	 * Sets a message.
@@ -216,4 +206,84 @@ export interface PopupOptions<TInput, TResult> {
 	 * A function to lazy load the component.
 	 */
 	loadComponent?: () => PopupComponentType<TInput, TResult>;
+}
+
+/**
+ * Represents a message that can be localized and parameterized.
+ * Used by {@link MessageService} to translate/format messages.
+ */
+export interface ParameterizedMessage {
+	/**
+	 * The message key.
+	 */
+	messageKey: string;
+	/**
+	 * The message parameters.
+	 */
+	parameters?: Record<string, unknown> | false;
+
+	/**
+	 * The message context.
+	 */
+	context: string;
+}
+
+/**
+ * Interface representing the style options for form controls.
+ */
+export interface ControlStyleOptions {
+	/**
+	 * CSS class for validation error.
+	 */
+	validationErrorCssClass?: string | null;
+
+	/**
+	 * CSS class for the validation summary container.
+	 */
+	validationSummaryContainerCssClass?: string | null;
+
+	/**
+	 * CSS class for the validation summary header.
+	 */
+	validationSummaryHeaderCssClass?: string | null;
+
+	/**
+	 * CSS class for the validation summary list.
+	 */
+	validationSummaryListCssClass?: string | null;
+
+	/**
+	 * CSS class for the form control.
+	 */
+	formControlCssClass?: string | null;
+
+	/**
+	 * CSS class for the form control check.
+	 */
+	formControlCheckCssClass?: string | null;
+
+	/**
+	 * CSS class for the form control check label.
+	 */
+	formControlCheckLabelCssClass?: string | null;
+
+	/**
+	 * CSS class for valid form control.
+	 */
+	formControlValidCssClass?: string | null;
+
+	/**
+	 * CSS class for invalid form control.
+	 */
+	formControlInvalidCssClass?: string | null;
+
+	/**
+	 * CSS class for the form label.
+	 */
+	formLabelCssClass?: string | null;
+
+	/**
+	 * CSS class for the form group.
+	 */
+	formGroupCssClass?: string | null;
 }

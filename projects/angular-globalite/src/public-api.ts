@@ -47,3 +47,4 @@ export * from './lib/util/is-whitespace-or-empty';
 export * from './lib/util/get-parent-locale';
 export * from './lib/util/is-parent-locale';
 export * from './lib/util/same-parent-locale';
+export * from './lib/util/get-locale-parts';

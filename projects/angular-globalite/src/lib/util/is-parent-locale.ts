@@ -1,4 +1,4 @@
-import { getParentLocale } from './get-parent-locale';
+import { getLocaleParts } from './get-locale-parts';
 
 /**
  * Checks if the first locale is a parent of the second locale.
@@ -9,13 +9,12 @@ import { getParentLocale } from './get-parent-locale';
  * @returns {boolean} - Returns true if locale1 is a parent of locale2, otherwise false.
  */
 export function isParentLocale(locale1: string, locale2: string): boolean {
-	if (locale1 === locale2) {
-		return true;
-	}
-	locale2 = getParentLocale(locale2);
-	if (locale2 === locale1) {
-		return true;
+	const parentParts = getLocaleParts(locale1);
+	const childParts = getLocaleParts(locale2);
+
+	if (parentParts.region || !childParts.region) {
+		return false;
 	}
 
-	return getParentLocale(locale2) === locale1;
+	return parentParts.language === childParts.language;
 }

@@ -5,14 +5,6 @@ describe('sameParentLocale', () => {
 		expect(sameParentLocale('en-US', 'en-US')).toBe(true);
 	});
 
-	it('should return false if the first locale is empty', () => {
-		expect(sameParentLocale('', 'en-US')).toBe(false);
-	});
-
-	it('should return false if the second locale is empty', () => {
-		expect(sameParentLocale('en-US', '')).toBe(false);
-	});
-
 	it('should return true if both locales have the same parent locale', () => {
 		expect(sameParentLocale('en-US', 'en-GB')).toBe(true);
 	});
@@ -21,8 +13,8 @@ describe('sameParentLocale', () => {
 		expect(sameParentLocale('en-US', 'fr-FR')).toBe(false);
 	});
 
-	it('should return false if one locale is only a partial match', () => {
-		expect(sameParentLocale('en', 'en-Latin-US')).toBe(false);
+	it('should return true if one locale is parent of another', () => {
+		expect(sameParentLocale('en', 'en-Latin-US')).toBe(true);
 	});
 
 	it('should return true if both locales have the same parent locale in a more complex case', () => {

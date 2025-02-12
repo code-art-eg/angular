@@ -6,11 +6,12 @@
 	"peerDependencies": {
 		"@angular/common": "0.0.0",
 		"@angular/core": "0.0.0",
-		"bootstrap": "0.0.0",
-		"bootstrap-icons": "0.0.0",
 		"@code-art-eg/globalite": "0.0.0",
 		"@code-art-eg/angular-globalite": "0.0.0",
-		"@code-art-eg/angular-bootstrap": "0.0.0"
+		"@code-art-eg/angular-bootstrap": "0.0.0",
+		"bootstrap": "0.0.0",
+		"bootstrap-icons": "0.0.0",
+		"change-case": "0.0.0"
 	},
 	"dependencies": {
 		"tslib": "^2.3.0"

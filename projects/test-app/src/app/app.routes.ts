@@ -11,6 +11,7 @@ import { BooleanPipeExampleComponent } from './boolean-pipe-example/boolean-pipe
 import { FormDirectivesExampleComponent } from './form-directives-example/form-directives-example.component';
 import { DirectionExampleComponent } from './direction-example/direction-example.component';
 import { PopupExampleComponent } from './popup-example/popup-example.component';
+import { FormExampleComponent } from './form-example/form-example.component';
 
 export const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -69,5 +70,10 @@ export const routes: Routes = [
 		path: 'popup',
 		component: PopupExampleComponent,
 		title: 'popup',
+	},
+	{
+		path: 'form',
+		component: FormExampleComponent,
+		title: 'form',
 	},
 ];

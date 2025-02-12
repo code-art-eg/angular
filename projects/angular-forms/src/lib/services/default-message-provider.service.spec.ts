@@ -48,7 +48,7 @@ describe('DefaultMessageProviderService', () => {
 
 	it('should return the english message for the testKey', () =>
 		service
-			.getMessage('en', FORM_VALIDATION_CONTEXT, 'testKey')
+			.getMessage('en', FORM_VALIDATION_CONTEXT, 'testKey')!
 			.pipe(first())
 			.subscribe(result => {
 				expect(result).toEqual({
@@ -56,13 +56,11 @@ describe('DefaultMessageProviderService', () => {
 					language: 'en',
 					message: 'Default English message for testKey',
 					context: FORM_VALIDATION_CONTEXT,
-					editable: false,
-					provider: service,
 				});
 			}));
 	it('should return the german message for the testKey', () =>
 		service
-			.getMessage('de', FORM_VALIDATION_CONTEXT, 'testKey')
+			.getMessage('de', FORM_VALIDATION_CONTEXT, 'testKey')!
 			.pipe(first())
 			.subscribe(result => {
 				expect(result).toEqual({
@@ -70,34 +68,21 @@ describe('DefaultMessageProviderService', () => {
 					language: 'de',
 					message: 'Default German message for testKey',
 					context: FORM_VALIDATION_CONTEXT,
-					editable: false,
-					provider: service,
 				});
 			}));
 
 	it('should return the null for french message for the testKey', () =>
-		service
-			.getMessage('fr', FORM_VALIDATION_CONTEXT, 'testKey')
-			.pipe(first())
-			.subscribe(result => {
-				expect(result).toBeNull();
-			}));
+		expect(
+			service.getMessage('fr', FORM_VALIDATION_CONTEXT, 'testKey')
+		).toBeNull());
 
 	it('should return the null for english message for the testKey with wrong context', () =>
-		service
-			.getMessage('fr', NO_CONTEXT, 'testKey')
-			.pipe(first())
-			.subscribe(result => {
-				expect(result).toBeNull();
-			}));
+		expect(service.getMessage('fr', NO_CONTEXT, 'testKey')).toBeNull());
 
 	it('should return the null for english message for the wrongKey', () =>
-		service
-			.getMessage('en', FORM_VALIDATION_CONTEXT, 'wrongKey')
-			.pipe(first())
-			.subscribe(result => {
-				expect(result).toBeNull();
-			}));
+		expect(
+			service.getMessage('en', FORM_VALIDATION_CONTEXT, 'wrongKey')
+		).toBeNull());
 
 	it('should return false for supportsEditing', () => {
 		expect(service.supportsEditing).toBeFalse();
