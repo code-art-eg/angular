@@ -1,6 +1,6 @@
 import { FormControl } from '@angular/forms';
 import { futureDate } from './future-date';
-import type { DateOnly } from '@code-art-eg/angular-globalite';
+import type { DateOnly } from '@code-art-eg/globalite';
 
 describe('futureDate Validator', () => {
 	it('should return null if the control value is null', () => {

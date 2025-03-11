@@ -1,10 +1,10 @@
 import { Directive, forwardRef } from '@angular/core';
 import { BaseConverterDirective } from './base-converter-directive';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { CoercedValue, ControlValue, DateOnly } from '../types';
+import { CoercedValue, ControlValue } from '../types';
+import { DateOnly, isDateOnly } from '@code-art-eg/globalite';
 import { isWhitespaceOrEmpty } from '../util/is-whitespace-or-empty';
 import { dateFormatter, dateParser } from '@code-art-eg/globalite';
-import { isDateOnly } from '../util/is-date-only';
 
 /**
  * Directive to convert and format DateOnly values using Globalite.

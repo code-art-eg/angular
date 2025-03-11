@@ -1,8 +1,8 @@
 import { generatePipeTest } from './pipe-test.spec';
 import { dateFormatter } from '@code-art-eg/globalite';
+import type { DateOnly } from '@code-art-eg/globalite';
 import { GlobalizeDatePipe } from './globalize-date.pipe';
 import { BaseGlobalizePipe } from './base-globalize-pipe';
-import { DateOnly } from '../types';
 
 describe('GlobalizeDatePipe', () => {
 	generatePipeTest(

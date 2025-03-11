@@ -1129,10 +1129,10 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@code-art-eg/globalite@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@code-art-eg/globalite/-/globalite-0.6.0.tgz#e93c53ac56db0a55366aaaab087d77190bc548ad"
-  integrity sha512-q7g5UqpE/HBYCUWekDRcp1GyICi4Y9PtJ4v5KG87rPyfHoWBzLW6kwkoFcIMRHQIDgnJkLYUXIIdEpJGR9urjQ==
+"@code-art-eg/globalite@^0.7.0":
+  version "0.7.0"
+  resolved "https://npm.pkg.github.com/download/@code-art-eg/globalite/0.7.0/156f04ceac6992064ad4af34afec2d06be710798#156f04ceac6992064ad4af34afec2d06be710798"
+  integrity sha512-S5PuasLifHsQFbp9PYFoii0k94iooYPLtjnAmPtN0Vib6IS8/3zS/ZxMn8Isg6NouBWzX7bjDUOaIUix9+nJVw==
 
 "@colors/colors@1.5.0":
   version "1.5.0"

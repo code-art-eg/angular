@@ -1,7 +1,7 @@
 import { AbstractControl, ValidatorFn } from '@angular/forms';
 import { isEmptyValue } from '../util/is-empty-value';
-import { isDateOnly } from '@code-art-eg/angular-globalite';
 import { getAge } from '../util/get-age';
+import { isDateOnly } from '@code-art-eg/globalite';
 
 export function ageRange(minAge: number, maxAge: number): ValidatorFn {
 	return (c: AbstractControl) => {

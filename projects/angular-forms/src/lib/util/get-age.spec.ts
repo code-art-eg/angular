@@ -1,5 +1,5 @@
-import type { DateOnly } from '@code-art-eg/angular-globalite';
 import { getAge } from './get-age';
+import type { DateOnly } from '@code-art-eg/globalite';
 
 describe('getAge Utility Function', () => {
 	it('should return the correct age if the input is a valid Date object', () => {

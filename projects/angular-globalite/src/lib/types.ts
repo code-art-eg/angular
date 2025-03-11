@@ -81,27 +81,3 @@ export type WeekdayDisplay = 'narrow' | 'short' | 'long';
 export type ControlValue<T> = T | null | string;
 export type OnChangeHandler<T> = (val: ControlValue<T>) => void;
 export type CoercedValue<T> = T | null | undefined;
-
-/**
- * Type representing a date without time.
- *
- */
-export interface DateOnly {
-	/**
-	 * The year.
-	 * @type {number}
-	 */
-	year: number;
-
-	/**
-	 * The month. 1-based. Unlike JavaScript Date object, which is 0-based.
-	 * @type {number}
-	 */
-	month: number;
-
-	/**
-	 * The day of the month.
-	 * @type {number}
-	 */
-	day: number;
-}

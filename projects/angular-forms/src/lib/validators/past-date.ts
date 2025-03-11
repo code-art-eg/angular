@@ -1,6 +1,6 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
-import { isDateOnly } from '@code-art-eg/angular-globalite';
 import { compareDates } from '../util/compare-dates';
+import { isDateOnly } from '@code-art-eg/globalite';
 
 /**
  * Returns a validator function that checks if the control value is a date in the past.

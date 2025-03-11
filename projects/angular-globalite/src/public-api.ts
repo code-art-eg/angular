@@ -15,7 +15,6 @@ export type {
 	StorageLocaleConfig,
 	MonthDisplay,
 	WeekdayDisplay,
-	DateOnly,
 	ControlValue,
 	CoercedValue,
 } from './lib/types';
@@ -42,7 +41,6 @@ export * from './lib/directives/globalize-direction.directive';
 export * from './lib/constants';
 
 export * from './lib/util/normalize-locale-name';
-export * from './lib/util/is-date-only';
 export * from './lib/util/is-whitespace-or-empty';
 export * from './lib/util/get-parent-locale';
 export * from './lib/util/is-parent-locale';

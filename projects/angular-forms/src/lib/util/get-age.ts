@@ -1,4 +1,4 @@
-import type { DateOnly } from '@code-art-eg/angular-globalite';
+import type { DateOnly } from '@code-art-eg/globalite';
 
 export function getAge(dateOfBirth: Date | DateOnly) {
 	const today = new Date();

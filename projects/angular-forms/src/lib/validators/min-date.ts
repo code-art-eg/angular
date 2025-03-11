@@ -1,7 +1,7 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
-import { isDateOnly } from '@code-art-eg/angular-globalite';
 import { compareDates } from '../util/compare-dates';
-import type { DateOnly } from '@code-art-eg/angular-globalite';
+import { isDateOnly } from '@code-art-eg/globalite';
+import type { DateOnly } from '@code-art-eg/globalite';
 
 /**
  * return a validator function that checks if the control value is a date after the specified minimum date.

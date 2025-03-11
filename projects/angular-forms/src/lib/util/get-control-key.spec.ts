@@ -26,7 +26,7 @@ describe('getControlKeys', () => {
 		]);
 		const ctl = ar.controls[2]!;
 		const result = getControlKey(ctl);
-		expect(result).toBe('2');
+		expect(result).toBe(2);
 	});
 
 	it('should return index with parent control key when parent is a form array with a parent group', () => {
