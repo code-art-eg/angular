@@ -1,7 +1,5 @@
 import { Observable } from 'rxjs';
 import { THEMES } from './themes';
-import { TemplateRef, Type } from '@angular/core';
-import { DefaultExport } from '@angular/router';
 
 /**
  * Theme type. Either 'light' or 'dark'.
