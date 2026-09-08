@@ -85,7 +85,7 @@ describe('DefaultMessageProviderService', () => {
 		).toBeNull());
 
 	it('should return false for supportsEditing', () => {
-		expect(service.supportsEditing).toBeFalse();
+		expect(service.supportsEditing).toBe(false);
 	});
 
 	it('should throw an error for setMessage', () => {

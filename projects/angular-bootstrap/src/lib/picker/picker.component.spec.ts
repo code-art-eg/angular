@@ -74,7 +74,7 @@ describe('PickerComponent', () => {
 	});
 
 	it('should emit valueChange when a button is clicked', () => {
-		spyOn(component.valueChange, 'emit');
+		const emitSpy = vi.spyOn(component.valueChange, 'emit');
 		component.selections = [
 			{ icon: 'sun-fill', value: 'light', label: 'Light' },
 			{ icon: 'moon-stars-fill', value: 'dark', label: 'Dark' },
@@ -82,11 +82,17 @@ describe('PickerComponent', () => {
 		];
 		fixture.detectChanges();
 
+		const pickerButton = fixture.debugElement.query(
+			By.css('.dropdown-toggle')
+		);
+		pickerButton.triggerEventHandler('click', null);
+		fixture.detectChanges();
+
 		const button = fixture.debugElement.query(By.css('.dropdown-item'));
 		button.triggerEventHandler('click', null);
 		fixture.detectChanges();
 
-		expect(component.valueChange.emit).toHaveBeenCalledWith('light');
+		expect(emitSpy).toHaveBeenCalledWith('light');
 	});
 
 	it('should update active button on value change', () => {

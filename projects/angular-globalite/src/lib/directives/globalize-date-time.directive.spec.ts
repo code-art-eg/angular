@@ -10,6 +10,7 @@ import { LOCALE_PROVIDERS_TOKEN } from '../provider-tokens';
 import { LocaleProvider } from '../types';
 import { LocaleService } from '../services/locale.service';
 import { SUPPORTED_LOCALES_TOKEN } from '../constants';
+import { dateFormatter } from '@code-art-eg/globalite';
 
 const date1 = new Date(2008, 4, 31, 5, 42);
 
@@ -103,7 +104,9 @@ describe('GlobalizeDateTimeDirective', () => {
 		localeService.currentLocale = 'de';
 		expect(input.value).toBe('21.03.2021, 15:21:00');
 		localeService.currentLocale = 'ar-EG';
-		expect(input.value).toBe('٢١‏/٣‏/٢٠٢١ ٣:٢١:٠٠ م');
+		expect(input.value).toBe(
+			dateFormatter('ar-EG', 'G')(new Date(2021, 2, 21, 15, 21))
+		);
 	});
 
 	it('parse the date input value with ar locale', () => {
@@ -111,7 +114,7 @@ describe('GlobalizeDateTimeDirective', () => {
 		localeService.currentLocale = 'ar-EG';
 		component.formControl.setValue(1234567.89556);
 		fixture.detectChanges();
-		input.value = '٢١/٣/٢٠٢١ ٣:٢١:٠٠ م';
+		input.value = dateFormatter('ar-EG', 'G')(new Date(2021, 2, 21, 15, 21));
 		input.dispatchEvent(new Event('input'));
 		expect(component.formControl.value).toEqual(
 			new Date(2021, 2, 21, 15, 21)

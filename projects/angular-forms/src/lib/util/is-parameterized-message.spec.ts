@@ -4,25 +4,25 @@ describe('isParameterizedMessage', () => {
 	it('should return false for a string with message parameters', () => {
 		const message = 'Hello, {name}!';
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return false for a string', () => {
 		const message = 'Hello, world!';
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return false for an empty object', () => {
 		const message = {};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return false for a null value', () => {
 		const message = null;
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return true for a valid object', () => {
@@ -32,7 +32,7 @@ describe('isParameterizedMessage', () => {
 			context: 'testContext',
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 
 	it('should return true for a valid object without parameters', () => {
@@ -41,7 +41,7 @@ describe('isParameterizedMessage', () => {
 			context: 'testContext',
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 
 	it('should return true for a valid object when parameters is false', () => {
@@ -51,7 +51,7 @@ describe('isParameterizedMessage', () => {
 			parameters: false,
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 
 	it('should return false for a valid object when parameters is true', () => {
@@ -61,7 +61,7 @@ describe('isParameterizedMessage', () => {
 			parameters: true,
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return false for a valid object without messageKey', () => {
@@ -70,7 +70,7 @@ describe('isParameterizedMessage', () => {
 			parameters: { name: 'world' },
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return false for a valid object without context', () => {
@@ -79,7 +79,7 @@ describe('isParameterizedMessage', () => {
 			parameters: { name: 'world' },
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return false for an object with null parameters', () => {
@@ -89,7 +89,7 @@ describe('isParameterizedMessage', () => {
 			parameters: null,
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return true for a an object with undefined parameters', () => {
@@ -99,7 +99,7 @@ describe('isParameterizedMessage', () => {
 			parameters: undefined,
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 
 	it('should return false for an object numeric parameters', () => {
@@ -109,7 +109,7 @@ describe('isParameterizedMessage', () => {
 			parameters: 4,
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return true for an object with empty object parameters', () => {
@@ -119,7 +119,7 @@ describe('isParameterizedMessage', () => {
 			parameters: {},
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 
 	it('should return false with wrong messageKey type', () => {
@@ -129,7 +129,7 @@ describe('isParameterizedMessage', () => {
 			parameters: {},
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return false with wrong context type', () => {
@@ -139,6 +139,6 @@ describe('isParameterizedMessage', () => {
 			parameters: {},
 		};
 		const result = isParameterizedMessage(message);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 });

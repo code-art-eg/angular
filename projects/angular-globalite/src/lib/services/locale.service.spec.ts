@@ -29,7 +29,7 @@ describe('LocaleService', () => {
 				locale$: of('fr-FR'),
 				locale: 'fr-FR',
 				canWrite: false,
-				setLocale: jasmine.createSpy('setLocale'),
+				setLocale: vi.fn(),
 			},
 			{
 				locale$: locale$,

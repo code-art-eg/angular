@@ -4,7 +4,7 @@ describe('messageHasParameters', () => {
 	it('should return false if msg.parameters is undefined', () => {
 		const msg = { messageKey: '', context: '', parameters: undefined };
 		const result = messageHasParameters(msg);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return false if msg.parameters is not an object', () => {
@@ -14,7 +14,7 @@ describe('messageHasParameters', () => {
 			parameters: undefined,
 		};
 		const result = messageHasParameters(msg);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return false if msg.parameters is an empty object', () => {
@@ -24,7 +24,7 @@ describe('messageHasParameters', () => {
 			parameters: {},
 		};
 		const result = messageHasParameters(msg);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return true if msg.parameters has properties', () => {
@@ -34,7 +34,7 @@ describe('messageHasParameters', () => {
 			parameters: { name: 'John' },
 		};
 		const result = messageHasParameters(msg);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 
 	it('should return true if msg.parameters has multiple properties', () => {
@@ -44,6 +44,6 @@ describe('messageHasParameters', () => {
 			parameters: { firstName: 'John', lastName: 'Doe' },
 		};
 		const result = messageHasParameters(msg);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 });

@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, inject, Injectable } from '@angular/core';
+import {
+	ChangeDetectorRef,
+	inject,
+	Injectable,
+	Injector,
+	runInInjectionContext,
+} from '@angular/core';
 import type { OnDestroy, PipeTransform } from '@angular/core';
 import { combineLatest, map, Observable } from 'rxjs';
 import { LocaleService } from '../services/locale.service';
@@ -16,6 +22,7 @@ export abstract class BaseGlobalizePipe<TInput, TOptions>
 
 	protected readonly localeService = inject(LocaleService);
 	protected readonly changeDetector = inject(ChangeDetectorRef);
+	readonly #injector = inject(Injector);
 
 	public ngOnDestroy(): void {
 		this.#dispose();
@@ -115,7 +122,10 @@ export abstract class BaseGlobalizePipe<TInput, TOptions>
 			);
 		}
 
-		this.#innerPipe = new AsyncPipe(this.changeDetector);
+		this.#innerPipe = runInInjectionContext(
+			this.#injector,
+			() => new AsyncPipe(this.changeDetector)
+		);
 		return this.#innerPipe.transform(this.#innerObservable);
 	}
 

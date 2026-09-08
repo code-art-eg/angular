@@ -7,7 +7,7 @@ describe('controlActionRecursive', () => {
 			control1: new FormControl(''),
 			control2: new FormControl(''),
 		});
-		const action = jasmine.createSpy('action');
+		const action = vi.fn();
 
 		controlActionRecursive(formGroup, action);
 
@@ -25,7 +25,7 @@ describe('controlActionRecursive', () => {
 				control3: new FormControl(''),
 			}),
 		});
-		const action = jasmine.createSpy('action');
+		const action = vi.fn();
 
 		controlActionRecursive(formGroup, action);
 
@@ -42,7 +42,7 @@ describe('controlActionRecursive', () => {
 			new FormControl(''),
 			new FormControl(''),
 		]);
-		const action = jasmine.createSpy('action');
+		const action = vi.fn();
 
 		controlActionRecursive(formArray, action);
 
@@ -60,7 +60,7 @@ describe('controlActionRecursive', () => {
 				control1: new FormControl(''),
 			}),
 		]);
-		const action = jasmine.createSpy('action');
+		const action = vi.fn();
 
 		controlActionRecursive(formArray, action);
 

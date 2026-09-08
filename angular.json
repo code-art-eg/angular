@@ -25,10 +25,10 @@
 					"defaultConfiguration": "production"
 				},
 				"test": {
-					"builder": "@angular/build:karma",
+					"builder": "@angular/build:unit-test",
 					"options": {
 						"tsConfig": "projects/angular-bootstrap/tsconfig.spec.json",
-						"polyfills": ["zone.js", "zone.js/testing"]
+						"runnerConfig": ""
 					}
 				},
 				"lint": {
@@ -65,10 +65,10 @@
 					"defaultConfiguration": "production"
 				},
 				"test": {
-					"builder": "@angular/build:karma",
+					"builder": "@angular/build:unit-test",
 					"options": {
 						"tsConfig": "projects/angular-globalite/tsconfig.spec.json",
-						"polyfills": ["zone.js", "zone.js/testing"]
+						"runnerConfig": ""
 					}
 				},
 				"lint": {
@@ -152,19 +152,10 @@
 					"builder": "@angular/build:extract-i18n"
 				},
 				"test": {
-					"builder": "@angular/build:karma",
+					"builder": "@angular/build:unit-test",
 					"options": {
-						"polyfills": ["zone.js", "zone.js/testing"],
 						"tsConfig": "projects/test-app/tsconfig.spec.json",
-						"inlineStyleLanguage": "scss",
-						"assets": [
-							{
-								"glob": "**/*",
-								"input": "projects/test-app/public"
-							}
-						],
-						"styles": ["projects/test-app/src/styles.scss"],
-						"scripts": []
+						"runnerConfig": ""
 					}
 				},
 				"lint": {
@@ -201,10 +192,10 @@
 					"defaultConfiguration": "production"
 				},
 				"test": {
-					"builder": "@angular/build:karma",
+					"builder": "@angular/build:unit-test",
 					"options": {
 						"tsConfig": "projects/angular-forms/tsconfig.spec.json",
-						"polyfills": ["zone.js", "zone.js/testing"]
+						"runnerConfig": ""
 					}
 				},
 				"lint": {

@@ -2,6 +2,7 @@
 import { NavigatorLanguageLocaleProviderService } from './navigator-language-locale-provider.service';
 import { TestBed } from '@angular/core/testing';
 import { DOCUMENT } from '@angular/common';
+import { firstValueFrom } from 'rxjs';
 
 describe('NavigatorLanguageLocaleProviderService', () => {
 	let service: NavigatorLanguageLocaleProviderService;
@@ -44,10 +45,8 @@ describe('NavigatorLanguageLocaleProviderService', () => {
 		);
 	});
 
-	it('should emit the correct locale from locale$', done => {
-		service.locale$.subscribe(locale => {
-			expect(locale).toBe('en-US');
-			done();
-		});
+	it('should emit the correct locale from locale$', async () => {
+		const locale = await firstValueFrom(service.locale$);
+		expect(locale).toBe('en-US');
 	});
 });

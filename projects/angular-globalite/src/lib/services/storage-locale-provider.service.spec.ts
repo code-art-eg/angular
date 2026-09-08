@@ -4,14 +4,15 @@ import { StorageLocaleConfig } from '../types';
 import { TestBed } from '@angular/core/testing';
 import { DOCUMENT } from '@angular/common';
 import { STORAGE_LOCALE_CONFIG_TOKEN } from '../constants';
+import type { Mock } from 'vitest';
 
 describe('StorageLocaleProviderService', () => {
 	let service: StorageLocaleProviderService;
 	let mockDocument: Document;
 	let mockLocalStorage: Storage;
 	let mockSessionStorage: Storage;
-	let mockAddEventListener: jasmine.Spy;
-	let mockRemoveEventListener: jasmine.Spy;
+	let mockAddEventListener: Mock;
+	let mockRemoveEventListener: Mock;
 
 	const testKey = 'test-local-storage-key';
 
@@ -27,20 +28,16 @@ describe('StorageLocaleProviderService', () => {
 		const sessionStorage = new Map<string, string>();
 
 		mockLocalStorage = {
-			getItem: jasmine
-				.createSpy('getItem')
-				.and.callFake(key => localStorage.get(key)),
-			setItem: jasmine
-				.createSpy('setItem')
-				.and.callFake((key: string, value: string) => {
-					localStorage.set(key, value);
-					const evt: StorageEvent = new StorageEvent('storage', {
-						key,
-						newValue: value,
-					});
-					listeners.forEach(listener => listener(evt));
-				}),
-			removeItem: jasmine.createSpy('removeItem').and.callFake(key => {
+			getItem: vi.fn((key: string) => localStorage.get(key) ?? null),
+			setItem: vi.fn((key: string, value: string) => {
+				localStorage.set(key, value);
+				const evt: StorageEvent = new StorageEvent('storage', {
+					key,
+					newValue: value,
+				});
+				listeners.forEach(listener => listener(evt));
+			}),
+			removeItem: vi.fn((key: string) => {
 				localStorage.delete(key);
 				const evt: StorageEvent = new StorageEvent('storage', {
 					key,
@@ -49,25 +46,21 @@ describe('StorageLocaleProviderService', () => {
 				listeners.forEach(listener => listener(evt));
 			}),
 			length: 0,
-			clear: jasmine.createSpy('clear'),
-			key: jasmine.createSpy('key'),
+			clear: vi.fn(),
+			key: vi.fn(),
 		};
 
 		mockSessionStorage = {
-			getItem: jasmine
-				.createSpy('getItem')
-				.and.callFake(key => localStorage.get(key)),
-			setItem: jasmine
-				.createSpy('setItem')
-				.and.callFake((key: string, value: string) => {
-					sessionStorage.set(key, value);
-					const evt: StorageEvent = new StorageEvent('storage', {
-						key,
-						newValue: value,
-					});
-					listeners.forEach(listener => listener(evt));
-				}),
-			removeItem: jasmine.createSpy('removeItem').and.callFake(key => {
+			getItem: vi.fn((key: string) => localStorage.get(key) ?? null),
+			setItem: vi.fn((key: string, value: string) => {
+				sessionStorage.set(key, value);
+				const evt: StorageEvent = new StorageEvent('storage', {
+					key,
+					newValue: value,
+				});
+				listeners.forEach(listener => listener(evt));
+			}),
+			removeItem: vi.fn((key: string) => {
 				sessionStorage.delete(key);
 				const evt: StorageEvent = new StorageEvent('storage', {
 					key,
@@ -76,21 +69,20 @@ describe('StorageLocaleProviderService', () => {
 				listeners.forEach(listener => listener(evt));
 			}),
 			length: 0,
-			clear: jasmine.createSpy('clear'),
-			key: jasmine.createSpy('key'),
+			clear: vi.fn(),
+			key: vi.fn(),
 		};
 
-		mockAddEventListener = jasmine
-			.createSpy('addEventListener')
-			.and.callFake((type: string, listener: (evt: Event) => void) => {
+		mockAddEventListener = vi.fn(
+			(type: string, listener: (evt: Event) => void) => {
 				if (type !== 'storage') {
 					return;
 				}
 				return listeners.push(listener);
-			});
-		mockRemoveEventListener = jasmine
-			.createSpy('removeEventListener')
-			.and.callFake((type: string, listener: (evt: Event) => void) => {
+			}
+		);
+		mockRemoveEventListener = vi.fn(
+			(type: string, listener: (evt: Event) => void) => {
 				if (type !== 'storage') {
 					return;
 				}
@@ -98,7 +90,8 @@ describe('StorageLocaleProviderService', () => {
 				if (index >= 0) {
 					listeners.splice(index, 1);
 				}
-			});
+			}
+		);
 
 		mockDocument = {
 			defaultView: {
@@ -106,7 +99,7 @@ describe('StorageLocaleProviderService', () => {
 				sessionStorage: mockSessionStorage,
 				addEventListener: mockAddEventListener,
 				removeEventListener: mockRemoveEventListener,
-				dispatchEvent: jasmine.createSpy('dispatchEvent'),
+				dispatchEvent: vi.fn(),
 			},
 		} as unknown as Document;
 

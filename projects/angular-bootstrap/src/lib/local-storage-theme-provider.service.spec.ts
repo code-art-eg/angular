@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { DOCUMENT } from '@angular/common';
+import type { Mock } from 'vitest';
 // noinspection ES6PreferShortImport
 import { LocalStorageThemeProviderService } from './local-storage-theme-provider.service';
 import { THEME_STORAGE_KEY_TOKEN } from './constants';
@@ -11,28 +12,24 @@ describe('ThemeStorageService', () => {
 	let service: LocalStorageThemeProviderService;
 	let mockDocument: Document;
 	let mockLocalStorage: Storage;
-	let mockAddEventListener: jasmine.Spy;
-	let mockRemoveEventListener: jasmine.Spy;
+	let mockAddEventListener: Mock;
+	let mockRemoveEventListener: Mock;
 	const themeKey = 'theme-key';
 
 	beforeEach(() => {
 		const listeners = [] as ((event: StorageEvent) => void)[];
 		const storage = new Map<string, string>();
 		mockLocalStorage = {
-			getItem: jasmine
-				.createSpy('getItem')
-				.and.callFake(key => storage.get(key)),
-			setItem: jasmine
-				.createSpy('setItem')
-				.and.callFake((key: string, value: string) => {
-					storage.set(key, value);
-					const evt: StorageEvent = new StorageEvent('storage', {
-						key,
-						newValue: value,
-					});
-					listeners.forEach(listener => listener(evt));
-				}),
-			removeItem: jasmine.createSpy('removeItem').and.callFake(key => {
+			getItem: vi.fn((key: string) => storage.get(key) ?? null),
+			setItem: vi.fn((key: string, value: string) => {
+				storage.set(key, value);
+				const evt: StorageEvent = new StorageEvent('storage', {
+					key,
+					newValue: value,
+				});
+				listeners.forEach(listener => listener(evt));
+			}),
+			removeItem: vi.fn((key: string) => {
 				storage.delete(key);
 				const evt: StorageEvent = new StorageEvent('storage', {
 					key,
@@ -41,20 +38,19 @@ describe('ThemeStorageService', () => {
 				listeners.forEach(listener => listener(evt));
 			}),
 			length: 0,
-			clear: jasmine.createSpy('clear'),
-			key: jasmine.createSpy('key'),
+			clear: vi.fn(),
+			key: vi.fn(),
 		};
-		mockAddEventListener = jasmine
-			.createSpy('addEventListener')
-			.and.callFake((type: string, listener: (evt: Event) => void) => {
+		mockAddEventListener = vi.fn(
+			(type: string, listener: (evt: Event) => void) => {
 				if (type !== 'storage') {
 					return;
 				}
 				return listeners.push(listener);
-			});
-		mockRemoveEventListener = jasmine
-			.createSpy('removeEventListener')
-			.and.callFake((type: string, listener: (evt: Event) => void) => {
+			}
+		);
+		mockRemoveEventListener = vi.fn(
+			(type: string, listener: (evt: Event) => void) => {
 				if (type !== 'storage') {
 					return;
 				}
@@ -62,14 +58,15 @@ describe('ThemeStorageService', () => {
 				if (index >= 0) {
 					listeners.splice(index, 1);
 				}
-			});
+			}
+		);
 
 		mockDocument = {
 			defaultView: {
 				localStorage: mockLocalStorage,
 				addEventListener: mockAddEventListener,
 				removeEventListener: mockRemoveEventListener,
-				dispatchEvent: jasmine.createSpy('dispatchEvent'),
+				dispatchEvent: vi.fn(),
 			},
 		} as unknown as Document;
 
@@ -91,24 +88,24 @@ describe('ThemeStorageService', () => {
 		service.ngOnDestroy();
 		expect(mockRemoveEventListener).toHaveBeenCalledWith(
 			'storage',
-			jasmine.any(Function)
+			expect.any(Function)
 		);
 	});
 
 	it('should add a storage event listener', () => {
 		expect(mockAddEventListener).toHaveBeenCalledWith(
 			'storage',
-			jasmine.any(Function)
+			expect.any(Function)
 		);
 	});
 
 	it('should return the current theme from local storage', () => {
-		(mockLocalStorage.getItem as jasmine.Spy).and.returnValue(THEMES[0]);
+		(mockLocalStorage.getItem as Mock).mockReturnValue(THEMES[0]);
 		expect(service.theme).toBe(THEMES[0]);
 	});
 
 	it('should return null if the theme in local storage is invalid', () => {
-		(mockLocalStorage.getItem as jasmine.Spy).and.returnValue(
+		(mockLocalStorage.getItem as Mock).mockReturnValue(
 			'invalid-theme'
 		);
 		expect(service.theme).toBeNull();

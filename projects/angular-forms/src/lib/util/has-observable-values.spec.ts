@@ -5,19 +5,19 @@ describe('hasObservableValues', () => {
 	it('should return false if params is an empty object', () => {
 		const params = {};
 		const result = hasObservableValues(params);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return true if params has an observable property', () => {
 		const params = { observableProp: new Observable() };
 		const result = hasObservableValues(params);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 
 	it('should return false if params has no observable properties', () => {
 		const params = { nonObservableProp: 'value' };
 		const result = hasObservableValues(params);
-		expect(result).toBeFalse();
+		expect(result).toBe(false);
 	});
 
 	it('should return true if params has multiple properties including an observable', () => {
@@ -26,7 +26,7 @@ describe('hasObservableValues', () => {
 			observableProp: new Observable(),
 		};
 		const result = hasObservableValues(params);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 
 	it('should return true if params has multiple properties including an parameterized message', () => {
@@ -39,6 +39,6 @@ describe('hasObservableValues', () => {
 			},
 		};
 		const result = hasObservableValues(params);
-		expect(result).toBeTrue();
+		expect(result).toBe(true);
 	});
 });

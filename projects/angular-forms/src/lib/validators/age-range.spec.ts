@@ -8,11 +8,12 @@ describe('ageRange Validator', () => {
 
 	beforeAll(() => {
 		const currentDate = new Date(2023, 0, 1); // January 1, 2023
-		jasmine.clock().mockDate(currentDate);
+		vi.useFakeTimers();
+		vi.setSystemTime(currentDate);
 	});
 
 	afterAll(() => {
-		jasmine.clock().uninstall();
+		vi.useRealTimers();
 	});
 
 	it('should return null if the control value is null', () => {

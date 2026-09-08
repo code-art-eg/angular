@@ -3,6 +3,7 @@
 import { AngularLocaleProviderService } from './angular-locale-provider.service';
 import { TestBed } from '@angular/core/testing';
 import { LOCALE_ID } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 
 describe('AngularLocaleProviderService', () => {
 	let service: AngularLocaleProviderService;
@@ -32,10 +33,8 @@ describe('AngularLocaleProviderService', () => {
 		);
 	});
 
-	it('should emit the correct locale from locale$', done => {
-		service.locale$.subscribe(locale => {
-			expect(locale).toBe('en-US');
-			done();
-		});
+	it('should emit the correct locale from locale$', async () => {
+		const locale = await firstValueFrom(service.locale$);
+		expect(locale).toBe('en-US');
 	});
 });

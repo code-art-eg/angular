@@ -79,12 +79,10 @@ describe('ThemeService', () => {
 		userTheme$ = new BehaviorSubject<Theme>(THEMES[0]);
 		mockDocument = {
 			body: {
-				setAttribute: jasmine.createSpy('setAttribute'),
+				setAttribute: vi.fn(),
 			},
 			defaultView: {
-				matchMedia: jasmine
-					.createSpy('matchMedia')
-					.and.callFake(matchMedia),
+				matchMedia: vi.fn(matchMedia),
 			},
 		} as unknown as Document;
 

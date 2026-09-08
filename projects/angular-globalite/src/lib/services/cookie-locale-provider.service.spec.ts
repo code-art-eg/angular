@@ -4,6 +4,7 @@ import { TestBed } from '@angular/core/testing';
 import { COOKIE_LOCALE_CONFIG_TOKEN } from '../constants';
 import { DOCUMENT } from '@angular/common';
 import { CookieLocaleConfig } from '../types';
+import { firstValueFrom } from 'rxjs';
 
 describe('CookieLocaleProviderService', () => {
 	let service: CookieLocaleProviderService;
@@ -48,12 +49,10 @@ describe('CookieLocaleProviderService', () => {
 		expect(service.locale).toBe('en-US');
 	});
 
-	it('should emit the correct locale from locale$', done => {
+	it('should emit the correct locale from locale$', async () => {
 		service.setLocale('en-US');
-		service.locale$.subscribe(locale => {
-			expect(locale).toBe('en-US');
-			done();
-		});
+		const locale = await firstValueFrom(service.locale$);
+		expect(locale).toBe('en-US');
 	});
 
 	it('should call createCookie when setLocale is called', () => {
