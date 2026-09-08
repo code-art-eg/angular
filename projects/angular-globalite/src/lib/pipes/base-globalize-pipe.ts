@@ -55,10 +55,7 @@ export abstract class BaseGlobalizePipe<TInput, TOptions>
 
 	public transform(
 		input:
-			| TInput
-			| Observable<TInput | null | undefined>
-			| null
-			| undefined,
+			TInput | Observable<TInput | null | undefined> | null | undefined,
 		optionsOrFormat?: TOptions | string,
 		locale?: string
 	): string | null {

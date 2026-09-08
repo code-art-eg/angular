@@ -105,9 +105,7 @@ describe('ThemeStorageService', () => {
 	});
 
 	it('should return null if the theme in local storage is invalid', () => {
-		(mockLocalStorage.getItem as Mock).mockReturnValue(
-			'invalid-theme'
-		);
+		(mockLocalStorage.getItem as Mock).mockReturnValue('invalid-theme');
 		expect(service.theme).toBeNull();
 	});
 

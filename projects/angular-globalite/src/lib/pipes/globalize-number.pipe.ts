@@ -18,8 +18,7 @@ export class GlobalizeNumberPipe
 	implements PipeTransform
 {
 	protected override getDefaultOptionsOrFormat():
-		| string
-		| Intl.NumberFormatOptions {
+		string | Intl.NumberFormatOptions {
 		return 'n';
 	}
 }

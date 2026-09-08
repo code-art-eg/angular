@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BooleanPipeExampleComponent } from './boolean-pipe-example.component';
 
 describe('BooleanPipeExampleComponent', () => {

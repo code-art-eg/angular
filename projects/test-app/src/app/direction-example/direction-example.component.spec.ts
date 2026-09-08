@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DirectionExampleComponent } from './direction-example.component';
 
 describe('DirectionExampleComponent', () => {

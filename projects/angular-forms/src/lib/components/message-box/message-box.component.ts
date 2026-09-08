@@ -1,7 +1,7 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 
 import { Subject } from 'rxjs';
-import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import type {
 	DialogButton,
 	IPopupComponent,
@@ -11,13 +11,14 @@ import { DEFAULT_BUTTONS } from '../../constants';
 
 @Component({
 	selector: 'frm-message-box',
-	imports: [NgForOf, NgClass, NgIf],
+	imports: [NgClass],
 	templateUrl: './message-box.component.html',
 	styleUrl: './message-box.component.css',
 })
-export class MessageBoxComponent
-	implements IPopupComponent<MessageBoxData, string>
-{
+export class MessageBoxComponent implements IPopupComponent<
+	MessageBoxData,
+	string
+> {
 	#data: MessageBoxData | null = null;
 
 	@ViewChild('headerTemplate') headerTemplate: TemplateRef<unknown> | null =

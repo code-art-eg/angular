@@ -1,7 +1,7 @@
 // noinspection ES6PreferShortImport
 
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -24,11 +24,8 @@ const date1 = {
 	`,
 })
 class TestComponent {
-	public readonly formControl: FormControl;
-
-	constructor(formBuilder: FormBuilder) {
-		this.formControl = formBuilder.control(date1);
-	}
+	public readonly formControl: FormControl =
+		inject(FormBuilder).control(date1);
 }
 
 class MockLocaleProvider implements LocaleProvider {

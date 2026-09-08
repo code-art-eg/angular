@@ -23,7 +23,16 @@ describe('LocaleValidatorService', () => {
 	});
 
 	it('should throw an error if supportedLocales is empty', () => {
-		expect(() => new LocaleValidatorService([])).toThrowError(
+		TestBed.resetTestingModule();
+		TestBed.configureTestingModule({
+			providers: [
+				{
+					provide: SUPPORTED_LOCALES_TOKEN,
+					useValue: [],
+				},
+			],
+		});
+		expect(() => TestBed.inject(LocaleValidatorService)).toThrowError(
 			'Parameter supportedLocales passed to LocaleValidatorService constructor cannot be empty.'
 		);
 	});

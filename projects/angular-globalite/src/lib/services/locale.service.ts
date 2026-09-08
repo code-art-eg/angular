@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { LocaleProvider } from '../types';
 import { LocaleValidatorService } from './locale-validator.service';
 import { combineLatest, map, Observable } from 'rxjs';
@@ -13,22 +13,21 @@ import { LOCALE_PROVIDERS_TOKEN } from '../provider-tokens';
 	providedIn: 'root',
 })
 export class LocaleService {
+	private readonly providers: LocaleProvider[] = inject(
+		LOCALE_PROVIDERS_TOKEN
+	);
+	private readonly localeValidator: LocaleValidatorService = inject(
+		LocaleValidatorService
+	);
 	readonly locale$: Observable<string>;
 	#currentLocale: string;
 
 	/**
 	 * Constructor.
-	 *
-	 * @param providers - The locale providers.
-	 * @param localeValidator - The locale validator.
 	 */
-	constructor(
-		@Inject(LOCALE_PROVIDERS_TOKEN)
-		private readonly providers: LocaleProvider[],
-		private readonly localeValidator: LocaleValidatorService
-	) {
+	constructor() {
 		this.locale$ = combineLatest(
-			providers.map(provider => provider.locale$)
+			this.providers.map(provider => provider.locale$)
 		).pipe(map(locales => this.#getBestLocale(locales)));
 
 		this.#currentLocale = this.#getBestLocale(

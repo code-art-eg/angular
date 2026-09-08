@@ -49,7 +49,10 @@ export function generatePipeTest<
 		mockCd = {
 			markForCheck: vi.fn(),
 			detectChanges: vi.fn(),
-		} as unknown as { markForCheck: Mock; detectChanges: Mock } & ChangeDetectorRef;
+		} as unknown as {
+			markForCheck: Mock;
+			detectChanges: Mock;
+		} & ChangeDetectorRef;
 		TestBed.configureTestingModule({
 			providers: [
 				{

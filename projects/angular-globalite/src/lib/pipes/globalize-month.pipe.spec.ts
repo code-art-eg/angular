@@ -34,9 +34,7 @@ describe('GlobalizeMonthPipe', () => {
 				format === 'narrow-islamic'
 			) {
 				monthFormat = format.slice(0, format.indexOf('-')) as
-					| 'long'
-					| 'short'
-					| 'narrow';
+					'long' | 'short' | 'narrow';
 				calendar = 'islamic';
 			}
 			return getMonthName(locale, month, monthFormat, calendar);

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DurationPipeExampleComponent } from './duration-pipe-example.component';
 
 describe('DurationPipeExampleComponent', () => {

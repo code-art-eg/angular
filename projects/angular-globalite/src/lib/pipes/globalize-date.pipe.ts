@@ -15,8 +15,7 @@ import { BaseDatePipe } from './base-date-pipe';
 })
 export class GlobalizeDatePipe extends BaseDatePipe implements PipeTransform {
 	protected override getDefaultOptionsOrFormat():
-		| string
-		| Intl.DateTimeFormatOptions {
+		string | Intl.DateTimeFormatOptions {
 		return 'd';
 	}
 }

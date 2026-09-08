@@ -1,6 +1,9 @@
-@if(showError) {
+@if (showError) {
 	<div [ngClass]="dummyControlClass" style="display: none; !important;"></div>
 	@for (error of errors; track error.messageKey) {
-		<div [frmParameterizedMessage]="error" [className]="controlStyles.validationErrorCssClass"></div>
+		<div
+			[frmParameterizedMessage]="error"
+			[className]="controlStyles.validationErrorCssClass"
+		></div>
 	}
 }

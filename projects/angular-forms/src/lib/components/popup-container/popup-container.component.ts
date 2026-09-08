@@ -11,7 +11,7 @@ import {
 	ViewChild,
 	ViewContainerRef,
 } from '@angular/core';
-import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 
 import {
 	firstValueFrom,
@@ -31,7 +31,7 @@ import type { IPopupComponent, PopupOptions } from '../../types';
 
 @Component({
 	selector: 'frm-container',
-	imports: [NgTemplateOutlet, NgIf],
+	imports: [NgTemplateOutlet],
 	templateUrl: './popup-container.component.html',
 	styleUrl: './popup-container.component.scss',
 })

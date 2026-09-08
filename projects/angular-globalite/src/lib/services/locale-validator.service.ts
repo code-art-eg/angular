@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { SUPPORTED_LOCALES_TOKEN } from '../constants';
 import { normalizeLocaleName } from '../util/normalize-locale-name';
 import { isParentLocale } from '../util/is-parent-locale';
@@ -17,10 +17,8 @@ export class LocaleValidatorService {
 	 * Constructs a new instance of LocaleValidatorService.
 	 * @throws {Error} If the supportedLocales array is empty.
 	 */
-	constructor(
-		@Inject(SUPPORTED_LOCALES_TOKEN)
-		supportedLocales: string[]
-	) {
+	constructor() {
+		const supportedLocales = inject(SUPPORTED_LOCALES_TOKEN);
 		if (supportedLocales.length === 0) {
 			throw new Error(
 				'Parameter supportedLocales passed to LocaleValidatorService constructor cannot be empty.'

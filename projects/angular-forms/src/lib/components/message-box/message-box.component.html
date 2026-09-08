@@ -2,18 +2,21 @@
 	<h2 class="modal-title h5">{{ title }}</h2>
 </ng-template>
 <div class="row">
-	<i *ngIf="icon" class="bi col-1" [ngClass]="iconClass"></i>
+	@if (icon) {
+		<i class="bi col-1" [ngClass]="iconClass"></i>
+	}
 	<span class="col-11" style="vertical-align: middle">{{ message }}</span>
 </div>
 <ng-template #footerTemplate>
 	<div>
-		<button
-			*ngFor="let btn of buttons"
-			class="btn ms-3"
-			[ngClass]="getButtonClass(btn)"
-			(click)="handleButtonClick(btn)"
-		>
-			{{ btn.text }}
-		</button>
+		@for (btn of buttons; track btn) {
+			<button
+				class="btn ms-3"
+				[ngClass]="getButtonClass(btn)"
+				(click)="handleButtonClick(btn)"
+			>
+				{{ btn.text }}
+			</button>
+		}
 	</div>
 </ng-template>

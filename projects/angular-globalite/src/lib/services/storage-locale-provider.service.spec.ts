@@ -154,10 +154,20 @@ describe('StorageLocaleProviderService', () => {
 	});
 
 	it('uses session storage if configured', () => {
-		service = new StorageLocaleProviderService(mockDocument, {
-			key: testKey,
-			useSessionStorage: true,
+		TestBed.resetTestingModule();
+		TestBed.configureTestingModule({
+			providers: [
+				{ provide: DOCUMENT, useValue: mockDocument },
+				{
+					provide: STORAGE_LOCALE_CONFIG_TOKEN,
+					useValue: {
+						key: testKey,
+						useSessionStorage: true,
+					},
+				},
+			],
 		});
+		service = TestBed.inject(StorageLocaleProviderService);
 
 		service.setLocale('fr-FR');
 		expect(mockSessionStorage.setItem).toHaveBeenCalledWith(

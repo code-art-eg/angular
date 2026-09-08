@@ -1,6 +1,6 @@
 import { GlobalizeNumberDirective } from './globalize-number.directive';
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -14,11 +14,7 @@ import { SUPPORTED_LOCALES_TOKEN } from '../constants';
 	template: ` <input type="text" glbToNumber [formControl]="formControl" /> `,
 })
 class TestComponent {
-	public readonly formControl: FormControl;
-
-	constructor(formBuilder: FormBuilder) {
-		this.formControl = formBuilder.control(1);
-	}
+	public readonly formControl: FormControl = inject(FormBuilder).control(1);
 }
 
 class MockLocaleProvider implements LocaleProvider {

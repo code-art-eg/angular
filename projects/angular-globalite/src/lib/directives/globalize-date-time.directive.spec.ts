@@ -1,5 +1,5 @@
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { By } from '@angular/platform-browser';
@@ -21,11 +21,8 @@ const date1 = new Date(2008, 4, 31, 5, 42);
 	`,
 })
 class TestComponent {
-	public readonly formControl: FormControl;
-
-	constructor(formBuilder: FormBuilder) {
-		this.formControl = formBuilder.control(date1);
-	}
+	public readonly formControl: FormControl =
+		inject(FormBuilder).control(date1);
 }
 
 class MockLocaleProvider implements LocaleProvider {
@@ -114,7 +111,10 @@ describe('GlobalizeDateTimeDirective', () => {
 		localeService.currentLocale = 'ar-EG';
 		component.formControl.setValue(1234567.89556);
 		fixture.detectChanges();
-		input.value = dateFormatter('ar-EG', 'G')(new Date(2021, 2, 21, 15, 21));
+		input.value = dateFormatter(
+			'ar-EG',
+			'G'
+		)(new Date(2021, 2, 21, 15, 21));
 		input.dispatchEvent(new Event('input'));
 		expect(component.formControl.value).toEqual(
 			new Date(2021, 2, 21, 15, 21)

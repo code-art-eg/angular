@@ -91,12 +91,7 @@ export interface MessageProvider {
  * Button type for a DialogButton.
  */
 export type ButtonType =
-	| 'primary'
-	| 'secondary'
-	| 'success'
-	| 'danger'
-	| 'warning'
-	| 'info';
+	'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
 
 /**
  * Dialog button data.

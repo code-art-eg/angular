@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { COOKIE_LOCALE_CONFIG_TOKEN } from '../constants';
 import { CookieLocaleConfig, LocaleProvider } from '../types';
 import { DOCUMENT } from '@angular/common';
@@ -13,24 +13,22 @@ import { readCookie } from '../util/read-cookie';
 	providedIn: 'root',
 })
 export class CookieLocaleProviderService implements LocaleProvider {
+	private readonly config: CookieLocaleConfig = inject(
+		COOKIE_LOCALE_CONFIG_TOKEN
+	);
+	private readonly document: Document = inject(DOCUMENT);
+
 	/**
 	 * @inheritdoc
 	 */
 	readonly canWrite = true;
-	readonly #locale$: BehaviorSubject<string | null>;
+	readonly #locale$: BehaviorSubject<string | null> = new BehaviorSubject<
+		string | null
+	>(this.locale);
 	/**
 	 * @inheritdoc
 	 */
-	readonly locale$: Observable<string | null>;
-
-	constructor(
-		@Inject(COOKIE_LOCALE_CONFIG_TOKEN)
-		private readonly config: CookieLocaleConfig,
-		@Inject(DOCUMENT) private readonly document: Document
-	) {
-		this.#locale$ = new BehaviorSubject<string | null>(this.locale);
-		this.locale$ = this.#locale$.asObservable();
-	}
+	readonly locale$: Observable<string | null> = this.#locale$.asObservable();
 
 	/**
 	 * @inheritdoc

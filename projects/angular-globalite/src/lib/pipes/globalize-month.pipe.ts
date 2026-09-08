@@ -25,7 +25,7 @@ export class GlobalizeMonthPipe
 		optionsFormat: string,
 		locale: string
 	): string {
-		let format: MonthDisplay = 'long';
+		let format: MonthDisplay;
 		let calendar: 'islamic' | 'gregory' = 'gregory';
 		if (optionsFormat === '') {
 			format = 'long';
@@ -49,9 +49,7 @@ export class GlobalizeMonthPipe
 			optionsFormat === 'narrow-islamic'
 		) {
 			format = optionsFormat.slice(0, optionsFormat.indexOf('-')) as
-				| 'long'
-				| 'short'
-				| 'narrow';
+				'long' | 'short' | 'narrow';
 			calendar = 'islamic';
 		} else {
 			throw new Error(

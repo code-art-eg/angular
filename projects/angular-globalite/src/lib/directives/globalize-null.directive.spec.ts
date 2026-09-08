@@ -1,5 +1,5 @@
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { By } from '@angular/platform-browser';
@@ -14,11 +14,8 @@ import { SUPPORTED_LOCALES_TOKEN } from '../constants';
 	template: ` <input type="text" glbToNull [formControl]="formControl" /> `,
 })
 class TestComponent {
-	public readonly formControl: FormControl;
-
-	constructor(formBuilder: FormBuilder) {
-		this.formControl = formBuilder.control('Hello');
-	}
+	public readonly formControl: FormControl =
+		inject(FormBuilder).control('Hello');
 }
 
 class MockLocaleProvider implements LocaleProvider {

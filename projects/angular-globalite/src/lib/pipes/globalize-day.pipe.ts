@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { BaseGlobalizePipe } from './base-globalize-pipe';
-import { MonthDisplay, WeekdayDisplay } from '../types';
+import { WeekdayDisplay } from '../types';
 import { getDayName } from '@code-art-eg/globalite';
 
 /**
@@ -24,7 +24,7 @@ export class GlobalizeDayPipe
 		optionsFormat: string,
 		locale: string
 	): string {
-		let format: MonthDisplay = 'long';
+		let format: WeekdayDisplay;
 		if (optionsFormat === '') {
 			format = 'long';
 		} else if (optionsFormat === 'D') {

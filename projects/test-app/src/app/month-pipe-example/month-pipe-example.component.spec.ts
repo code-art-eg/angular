@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MonthPipeExampleComponent } from './month-pipe-example.component';
 
 describe('MonthPipeExampleComponent', () => {

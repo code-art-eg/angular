@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DayPipeExampleComponent } from './day-pipe-example.component';
 
 describe('DayPipeExampleComponent', () => {

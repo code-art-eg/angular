@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FormDirectivesExampleComponent } from './form-directives-example.component';
 
 describe('FormDirectivesExampleComponent', () => {

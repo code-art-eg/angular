@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { STORAGE_LOCALE_CONFIG_TOKEN } from '../constants';
 import { LocaleProvider, StorageLocaleConfig } from '../types';
@@ -12,6 +12,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 	providedIn: 'root',
 })
 export class StorageLocaleProviderService implements LocaleProvider {
+	private readonly document: Document = inject(DOCUMENT);
+	private readonly config: StorageLocaleConfig = inject(
+		STORAGE_LOCALE_CONFIG_TOKEN
+	);
+
 	/**
 	 * The locale subject.
 	 */
@@ -29,14 +34,8 @@ export class StorageLocaleProviderService implements LocaleProvider {
 
 	/**
 	 * Initializes the service.
-	 * @param document - The document object.
-	 * @param config - The storage locale configuration.
 	 */
-	constructor(
-		@Inject(DOCUMENT) private readonly document: Document,
-		@Inject(STORAGE_LOCALE_CONFIG_TOKEN)
-		private readonly config: StorageLocaleConfig
-	) {
+	constructor() {
 		this.#locale$ = new BehaviorSubject(this.#getStorageLocale());
 		if (this.#window) {
 			this.#window.addEventListener('storage', this.#storageListener);
