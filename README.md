@@ -10,7 +10,7 @@ This library provides Angular components and directives that are compatible with
 It also includes a service for managing the application's theme (Dark vs Light).
 
 This source for this library was moved from old [angular-bootstrap](https://github.com/code-art-eg/angular-bootstrap) repository
-to this repository in order to manage all my Angular libraries in one place.
+to this repository to manage all my Angular libraries in one place.
 
 ### [@code-art-eg/angular-globalite](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-globalite.html)
 
@@ -18,11 +18,11 @@ This library provides Angular pipes and directives for formatting and parsing nu
 and currencies using the [globalite](https://github.com/code-art-eg/globalite) library.
 
 This source for this library was moved from old [angular-globalite](https://github.com/code-art-eg/angular-globalite) repository
-to this repository in order to manage all my Angular libraries in one place.
+to this repository to manage all my Angular libraries in one place.
 
 ### [@code-art-eg/angular-forms](https://code-art-eg.github.io/angular/modules/_code-art-eg_angular-forms.html)
 
-This library provides Angular directives, components and services for working with forms.
+This library provides Angular directives, components, and services for working with forms.
 
 ## Versioning
 
@@ -38,7 +38,7 @@ Since Angular 19 is the first supported version, the first version is 19.
 
 ## License
 
-The libraries in this repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+The libraries in this repository is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
